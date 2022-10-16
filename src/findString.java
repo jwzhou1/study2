@@ -4,8 +4,8 @@ public class findString {
             String[] arr = {"alex", "tommy","jack","da","wqeq"};
             String str = "tommy";
             System.out.println("string location is " + a2.find(arr,str));
+        };
     }
-}
 class A02 {
     public int find(String[] arr, String str) {
         if (str != null) {
