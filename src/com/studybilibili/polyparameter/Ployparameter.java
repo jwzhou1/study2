@@ -9,7 +9,9 @@ public class Ployparameter {
         ployparameter.showEmpAnnual(milian);
         ployparameter.testWork(tom);
         ployparameter.testWork(milian);
+        "hello".equals("abc");
     }
+
     public void showEmpAnnual(Empolyee e){
         System.out.println(e.getAnnual());
     }
