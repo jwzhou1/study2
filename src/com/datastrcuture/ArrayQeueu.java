@@ -60,12 +60,15 @@ class ArrayQueue{
         front = -1;
         rear = -1;
     }
+
     public boolean isFull() {
         return rear == maxSize - 1;
     }
+
     public boolean isEmpty() {
         return rear == front;
     }
+
     public void addQueue(int n) {
         if (isFull()){
             System.out.println("queue is full");
