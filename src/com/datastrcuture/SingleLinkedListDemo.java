@@ -1,5 +1,7 @@
 package com.datastrcuture;
 
+import java.util.Stack;
+
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
         HeroNode hero1 = new HeroNode(1,"king","guowang");
@@ -17,13 +19,24 @@ public class SingleLinkedListDemo {
 //        singleLinkedList.update(hero4New);
 //        System.out.println("=====after update=====");
 //        singleLinkedList.list();
-        System.out.println("=====Before delete=====");
-        singleLinkedList.list();
-        singleLinkedList.delete(1);
-        singleLinkedList.delete(4);
-        System.out.println("=====After delete=====");
+//        System.out.println("=====Before delete=====");
+//        singleLinkedList.list();
+//        singleLinkedList.delete(1);
+//        singleLinkedList.delete(4);
+//        System.out.println("=====After delete=====");
+//        singleLinkedList.list();
+
+        System.out.println("翻转前");
         singleLinkedList.list();
 
+        singleLinkedList.reverse();
+
+        System.out.println("翻转后");
+        singleLinkedList.list();
+        System.out.println("链表数据");
+        singleLinkedList.list();
+        System.out.println("逆序打印");
+        singleLinkedList.reversePrint();
 
     }
 }
@@ -39,6 +52,38 @@ class SingleLinkedList{
         }
         temp.next = node;
     }
+    public void reversePrint(){
+        if(head.next == null){
+            System.out.println("list is empty");
+            return;
+        }
+        Stack<HeroNode> stack = new Stack<>();
+        HeroNode cur = head.next;
+        while(cur != null) {
+            stack.push(cur);
+            cur = cur.next;
+        }
+        while(!stack.empty()){
+            System.out.println(stack.pop());
+        }
+    }
+    public void reverse() {
+        if (head.next == null) {
+            return;
+        }
+        HeroNode cur = head.next;
+        HeroNode next = null;
+        HeroNode reverseHead = new HeroNode(0, "", "");
+        while (cur != null) {
+            next = cur.next;
+            cur.next = reverseHead.next;
+            reverseHead.next = cur;
+            cur = next;
+        }
+        head.next = reverseHead.next;
+    }
+
+
     public void addByOrder(HeroNode node){
         HeroNode temp = head;
         boolean exist = false;
