@@ -1,9 +1,11 @@
 package com.datastrcuture;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class SingleLinkedListDemo {
     public static void main(String[] args) {
+        LinkedList linkedList = new LinkedList();
         HeroNode hero1 = new HeroNode(1,"king","guowang");
         HeroNode hero2 = new HeroNode(2,"queen","wanghou");
         HeroNode hero3 = new HeroNode(3,"aifusen","afisn");
